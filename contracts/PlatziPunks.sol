@@ -16,7 +16,7 @@ contract PlatziPunks is ERC721, ERC721Enumerable, PlatziPunksDNA {
     uint256 public maxSupply;
     mapping(uint256 => uint256) public tokenDNA;
 
-    constructor(uint256 _maxSupply) ERC721("PlatziPunks", "PLPKS") {
+    constructor(uint256 _maxSupply) ERC721("Mentorat", "MTRT") {
         maxSupply = _maxSupply;
     }
 
