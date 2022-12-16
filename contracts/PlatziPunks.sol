@@ -26,7 +26,7 @@ contract Certify {
     // Método que permite a la primera persona firmar el contrato
     function sign1(address _person1) public {
         // Verifica que la dirección pasada como parámetro sea la misma que la dirección de la primera persona
-        require(_person1 == person1, "La dirección especificada no coincide con la dirección de la primera persona");
+        require(_person1 == person1, "La direccion especificada no coincide con la direccion de la primera persona");
 
         // Establece la dirección de la primera persona y marca que ha firmado el contrato
         person1 = _person1;
@@ -36,7 +36,7 @@ contract Certify {
     // Método que permite a la segunda persona firmar el contrato
     function sign2(address _person2) public {
         // Verifica que la dirección pasada como parámetro sea la misma que la dirección de la segunda persona
-        require(_person2 == person2, "La dirección especificada no coincide con la dirección de la segunda persona");
+        require(_person2 == person2, "La direccion especificada no coincide con la direccion de la segunda persona");
 
         // Establece la dirección de la segunda persona y marca que ha firmado el contrato
         person2 = _person2;
@@ -49,6 +49,6 @@ contract Certify {
         require(person1Signed && person2Signed, "Ambas personas deben haber firmado el contrato antes de emitir el certificado");
 
         // Marca que el certificado ha sido emitido
-        certificateIssued = "Este mensaje certifica que fulano ha aprobado el curso de programación y mentoría de programadores";
+        certificateIssued = "Este mensaje certifica que fulano ha aprobado el curso de programacion y mentoria de programadores";
     }
 }

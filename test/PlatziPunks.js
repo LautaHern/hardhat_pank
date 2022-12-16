@@ -1,11 +1,11 @@
 const { expect } = require("chai");
 
-describe("Mentority Contract", () => {
+describe("Platzi Punks Contract", () => {
   const setup = async (maxSupply = 10000) => {
     const [owner] = await ethers.getSigners();
-    const Mentor = await ethers.getContractFactory("mentor");
+    const PlatziPunks = await ethers.getContractFactory("PlatziPunks");
 
-    const deployed = await Mentor.deploy(maxSupply);
+    const deployed = await PlatziPunks.deploy(maxSupply);
 
     return {
       owner,
@@ -15,7 +15,7 @@ describe("Mentority Contract", () => {
 
   describe("Deployment", () => {
     it("Set max supply to passed param", async () => {
-      const maxSupply = 100;
+      const maxSupply = 4000;
       const { deployed } = await setup(maxSupply);
 
       const returnedMaxSupply = await deployed.maxSupply();
@@ -42,7 +42,7 @@ describe("Mentority Contract", () => {
       await deployed.mint();
 
       // Assert the last minting
-      await expect(deployed.mint()).to.be.revertedWith("No quedan certificados");
+      await expect(deployed.mint()).to.be.revertedWith("No PlatziPunks left");
     });
   });
 
